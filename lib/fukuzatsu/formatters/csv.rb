@@ -15,7 +15,6 @@ module Fukuzatsu
       end
 
       def export
-        puts "class,method,complexity\n"
         puts content
       end
 
