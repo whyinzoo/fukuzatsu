@@ -7,7 +7,7 @@ module Fukuzatsu
       include Formatters::Base
 
       def self.writes_to_file_system?
-        true
+        false
       end
 
       def content
@@ -15,11 +15,8 @@ module Fukuzatsu
       end
 
       def export
-        begin
-          File.open(path_to_results, 'a') {|outfile| outfile.write(content)}
-        rescue Exception => e
-          puts "Unable to write output: #{e} #{e.backtrace}"
-        end
+        puts "class,method,complexity\n"
+        puts content
       end
 
       def file_extension
